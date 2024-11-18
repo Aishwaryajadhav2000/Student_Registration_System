@@ -1,0 +1,78 @@
+.formsection {
+    /* background-color: red; */
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+form {
+    background-color: aqua;
+    /* padding: 5px; */
+}
+
+#formfields {
+    width: 95vh;
+    /* align-items: center;
+    justify-content: center; */
+    display: flex;
+    padding: 10px;
+    border-radius: 40px 75px;
+    margin: 5px;
+    font-size: large;
+}
+
+button {
+    /* width: 100vh; */
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 20px 0 0px 40%;
+    /* background-color: brown; */
+    padding: 15px;
+    border-radius: 75px;
+    font-size: large;
+}
+
+#classcontact {
+    width: 40vh;
+    display: flex;
+    margin: 0;
+    justify-content: space-between;
+}
+
+/* .middleinput{
+    justify-content: space-between;
+ 
+    background-color: brown;
+    display: flex;
+    #classcontact{
+        width: 10vh;
+        display: flex;
+        margin: 0;
+        justify-content: space-between;
+    }
+} */
+
+.sectionform {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+
+    article {
+        /* background-color: brown; */
+        width: 50%;
+    }
+
+    label, input ,select{
+        /* background-color: blue; */
+        width: 40vh;
+        display: flex;
+        margin: 0;
+        justify-content: space-between;
+        border-radius: 40px 75px;
+        padding: 10px;
+       justify-content: center;
+    }
+}
