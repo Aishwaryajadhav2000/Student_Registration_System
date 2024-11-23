@@ -1,7 +1,7 @@
 .formsection {
     /* background-color: red; */
     height: 100vh;
-    width: 100%;
+    width: 90%;
     display: flex;
     justify-content: center;
     padding: 30px;
@@ -12,7 +12,7 @@ form {
     /* padding: 5px; */
 }
 
-#formfields {
+.formfields {
     width: 95vh;
     /* align-items: center;
     justify-content: center; */
@@ -23,7 +23,7 @@ form {
     font-size: large;
 }
 
-button {
+.submit {
     /* width: 100vh; */
     align-items: center;
     justify-content: center;
@@ -34,7 +34,9 @@ button {
     border-radius: 75px;
     font-size: large;
 }
-
+a{
+    text-decoration: none;
+}
 #classcontact {
     width: 40vh;
     display: flex;
@@ -75,4 +77,14 @@ button {
         padding: 10px;
        justify-content: center;
     }
+}
+table{
+    width: 100%;
+    border: 1px solid black;
+}
+
+ th, td{
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
 }
