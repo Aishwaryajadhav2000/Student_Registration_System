@@ -11,10 +11,11 @@ function register() {
     const rollNo = document.getElementById("rollno").value;
     const studentId = document.getElementById("studentid").value;
     const studentAddress = document.getElementById("address").value;
+    const studentemail = document.getElementById("emailid").value;
 
     //stored it in array
     const allStudents = {
-        studentName, studentParentname, classno, contactNo, rollNo, studentId, studentAddress
+        studentName, studentParentname, classno, contactNo, rollNo, studentId, studentAddress, studentemail
     }
 
     //To store the data in localstorage calling another function
