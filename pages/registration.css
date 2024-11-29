@@ -144,10 +144,6 @@ select {
 
     }
 
-    .disabledScrn {
-        display: none;
-    }
-
     .formfields {
         width: 95vh;
         /* align-items: center;
@@ -232,6 +228,11 @@ select {
         display: none;
     }
 
+}
+@media(min-width:500px){
+    .disabledScrn {
+        display: none;
+    }
 }
 
 .viewDetailsExpandclass {

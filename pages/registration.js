@@ -11,18 +11,24 @@ function register() {
     const rollNo = document.getElementById("rollno").value;
     const studentId = document.getElementById("studentid").value;
     const studentAddress = document.getElementById("address").value;
-    const studentemail = document.getElementById("emailid").value;
+    const studentemail = document.getElementById("email").value;
 
     //stored it in array
     const allStudents = {
         studentName, studentParentname, classno, contactNo, rollNo, studentId, studentAddress, studentemail
     }
 
-    //To store the data in localstorage calling another function
-    allStudentsinLocal(allStudents);
+    if (!studentName || !studentParentname || !classno || !contactNo || !rollNo || !studentId || !studentAddress || !studentemail) {
+        alert("All Details are mandetory ! Please Fill All the Details..");
+    } else {
+        //To store the data in localstorage calling another function
+        allStudentsinLocal(allStudents);
 
-    //to create rows with data in tablebody , calling another function
-    createTableRows(allStudents);
+        //to create rows with data in tablebody , calling another function
+        createTableRows(allStudents);
+    }
+
+
 
     //after adding input fields should be cleared
     document.getElementById("fullname").value = "";
@@ -32,6 +38,8 @@ function register() {
     document.getElementById("rollno").value = "";
     document.getElementById("studentid").value = "";
     document.getElementById("address").value = "";
+    document.getElementById("email").value = "";
+
 
 }
 
@@ -142,17 +150,20 @@ function createTableRows(allStudents) {
     //View Button Added for phone screen
     const viewDetails = document.createElement("td");
     const viewButton = document.createElement("button");
-    viewButton.textContent = "View";
+    const viewButtonanchor = document.createElement("a");
+    viewButtonanchor.textContent = "View";
+    viewButtonanchor.href = "#viewDetailsExpand";
+    viewButton.appendChild(viewButtonanchor);
     viewDetails.appendChild(viewButton);
     viewDetails.className = "disabledScrn";
     tablerow.appendChild(viewDetails);
 
-    viewButton.addEventListener("click", function(){
+    viewButton.addEventListener("click", function () {
         const viewDetailSection = document.getElementById("viewDetailsExpand");
         viewDetailSection.style.display = "block"
 
-        console.log("view click",tablerow);
-        console.log("view click",tablerow);
+        console.log("view click", tablerow);
+        console.log("view click", tablerow);
 
         const name = tablerow.cells[0].innerHTML;
         console.log("name", name);
@@ -167,12 +178,12 @@ function createTableRows(allStudents) {
         viewDetailSection.innerHTML = `
         <h3>Student Name - ${name}</h3>
         <h4>Parent Name - ${parentname}</h4>
-        <h4>${classno}</h4>
-        <h4>${contactNo}</h4>
-        <h4>${RollNo}</h4>
-        <h4>${StudentId}</h4>
-        <h4>${Address}</h4>
-        <h4>${Email}</h4>
+        <h4>Class - ${classno}</h4>
+        <h4>Contact No - ${contactNo}</h4>
+        <h4>Roll No - ${RollNo}</h4>
+        <h4>Student Id - ${StudentId}</h4>
+        <h4>Address - ${Address}</h4>
+        <h4>Email ID - ${Email}</h4>
         <button onClick="hide()">Hide</button>
         `
     })
@@ -192,7 +203,7 @@ function loadstudents() {
 
 //if window refreshing then loadstudents function should call
 window.onload = loadstudents;
-function hide(){
+function hide() {
     location.reload();
 }
 
