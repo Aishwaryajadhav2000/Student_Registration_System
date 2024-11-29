@@ -1,11 +1,17 @@
 /* Header */
 /* Header */
+body {
+    color: white;
+    background-color: #2b6a8b;
+
+}
+
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: brown;
+    background-color: #2b6a8b;
     height: 100px;
     /* Match height to fit content */
     z-index: 1000;
@@ -42,46 +48,54 @@ header h1 {
 main {
     padding-top: 100px;
     /* Add space to avoid overlap with header */
-
 }
 
 
 /* Form section styling */
 .formsection {
-    /* width: 90%; */
-    /* margin: 0 auto; */
+    height: auto;
+    width: 80%;
     display: flex;
     justify-content: center;
-    /* background-color: brown; */
+    padding: 30px;
 }
 
 form {
-    /* background-color: aqua; */
-    padding: 20px;
-    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.315);
+    padding: 35px;
 }
 
 /* Form fields styling */
 .formfields {
-    display: block;
-    margin: 10px 0;
-    /* padding: 10px; */
+    display: flex;
+    margin: 5px 0;
+    padding: 10px;
     border-radius: 10px;
+    width: 40vh;
+    font-size: large;
+    border-radius: 5px;
+
 }
 
-.formfields {
-    /* align-items: center;
-    justify-content: center; */
-    display: flex;
-    padding: 10px;
-    border-radius: 40px 75px;
-    margin: 5px;
-    font-size: large;
-    width: 40vh;
+table {
+    width: 100%;
+    border: 1px solid black;
 }
-input, textarea, select{
+
+th,
+td {
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+
+}
+
+input,
+textarea,
+select {
     text-align: center;
 }
+
 /* Submit button */
 .submit {
     display: flex;
@@ -89,9 +103,14 @@ input, textarea, select{
     margin: 20px auto;
     padding: 10px 20px;
     border-radius: 20px;
-    background-color: brown;
-    color: white;
+    background: linear-gradient(to right, rgb(14, 14, 123), rgb(218, 61, 87));
     cursor: pointer;
+    font-size: large;
+    font: bold;
+
+    a {
+        color: white;
+    }
 }
 
 .sectionform {
@@ -112,7 +131,7 @@ input, textarea, select{
         display: flex;
         margin: 0;
         /* justify-content: space-between; */
-        border-radius: 40px 75px;
+        border-radius: 5px;
         padding: 10px;
         /* justify-content: center; */
     }
@@ -121,27 +140,19 @@ input, textarea, select{
 @media (min-width:1500px) {
     .formsection {
         /* background-color: red; */
-        height: 100vh;
         width: 90%;
-        display: flex;
-        justify-content: center;
-        padding: 30px;
+
     }
 
-    form {
-        background-color: aqua;
-        /* padding: 5px; */
+    .disabledScrn {
+        display: none;
     }
 
     .formfields {
         width: 95vh;
         /* align-items: center;
         justify-content: center; */
-        display: flex;
-        padding: 10px;
         border-radius: 40px 75px;
-        margin: 5px;
-        font-size: large;
     }
 
     .submit {
@@ -204,18 +215,7 @@ input, textarea, select{
         }
     }
 
-    table {
-        width: 100%;
-        border: 1px solid black;
-    }
 
-    th,
-    td {
-        border: 1px solid black;
-        margin: 5px;
-        padding: 5px;
-
-    }
 
     button {
         color: rgb(54, 6, 6);
@@ -224,4 +224,21 @@ input, textarea, select{
             color: rgb(16, 53, 16);
         }
     }
+
+}
+
+@media(max-width:500px) {
+    .disabledPhonScrn {
+        display: none;
+    }
+
+}
+
+.viewDetailsExpandclass {
+    display: none;
+    background: linear-gradient(to left, rgb(14, 14, 123), rgb(218, 61, 87));
+    margin-top: 10px;
+    padding: 2px;
+    width: 105%;
+    padding-left: 5px;
 }

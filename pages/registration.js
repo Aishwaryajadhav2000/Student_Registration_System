@@ -55,15 +55,35 @@ function createTableRows(allStudents) {
 
     console.log("createTableRows function call", allStudents.studentName);
 
-    //create row tr first
+    const localData = JSON.parse(localStorage.getItem("allStudents")) || [];
+    console.log("localData", localData);
+    console.log("localData", localData[0].studentName);
+
+
+    const tablebody = document.getElementById("studentData");
     const tablerow = document.createElement("tr");
+    tablerow.innerHTML = `
+    <td>${allStudents.studentName}</td>
+    <td class="disabledPhonScrn">${allStudents.studentParentname}</td>
+    <td>${allStudents.classno}</td>
+    <td class="disabledPhonScrn">${allStudents.contactNo}</td>
+    <td>${allStudents.rollNo}</td>
+    <td class="disabledPhonScrn">${allStudents.studentId}</td>
+    <td class="disabledPhonScrn">${allStudents.studentAddress}</td>
+    <td class="disabledPhonScrn">${allStudents.studentemail}</td>
+ 
 
+    `
+    tablebody.appendChild(tablerow);
 
-    for (let key in allStudents) {
-        const studentstexttd = document.createElement("td");
-        studentstexttd.textContent = allStudents[key];
-        tablerow.appendChild(studentstexttd);
-    }
+    //create row tr first
+    // const tablerow = document.createElement("tr");
+    // for (let key in allStudents) {
+    //     const studentstexttd = document.createElement("td");
+    //     studentstexttd.textContent = allStudents[key];
+    //     tablerow.appendChild(studentstexttd);
+    // }
+
 
     //create td table data
     // const tabledataname = document.createElement("td");
@@ -119,7 +139,43 @@ function createTableRows(allStudents) {
         localStorage.setItem("allStudents", JSON.stringify(updateData));
     })
 
+    //View Button Added for phone screen
+    const viewDetails = document.createElement("td");
+    const viewButton = document.createElement("button");
+    viewButton.textContent = "View";
+    viewDetails.appendChild(viewButton);
+    viewDetails.className = "disabledScrn";
+    tablerow.appendChild(viewDetails);
 
+    viewButton.addEventListener("click", function(){
+        const viewDetailSection = document.getElementById("viewDetailsExpand");
+        viewDetailSection.style.display = "block"
+
+        console.log("view click",tablerow);
+        console.log("view click",tablerow);
+
+        const name = tablerow.cells[0].innerHTML;
+        console.log("name", name);
+        const parentname = tablerow.cells[1].innerHTML;
+        const classno = tablerow.cells[2].innerHTML;
+        const contactNo = tablerow.cells[3].innerHTML;
+        const RollNo = tablerow.cells[4].innerHTML;
+        const StudentId = tablerow.cells[5].innerHTML;
+        const Address = tablerow.cells[6].innerHTML;
+        const Email = tablerow.cells[7].innerHTML;
+
+        viewDetailSection.innerHTML = `
+        <h3>Student Name - ${name}</h3>
+        <h4>Parent Name - ${parentname}</h4>
+        <h4>${classno}</h4>
+        <h4>${contactNo}</h4>
+        <h4>${RollNo}</h4>
+        <h4>${StudentId}</h4>
+        <h4>${Address}</h4>
+        <h4>${Email}</h4>
+        <button onClick="hide()">Hide</button>
+        `
+    })
 
 
     //join tr with tbody
@@ -136,6 +192,9 @@ function loadstudents() {
 
 //if window refreshing then loadstudents function should call
 window.onload = loadstudents;
+function hide(){
+    location.reload();
+}
 
 //function for reset and delete to remove data from localstorage
 // function LocalDataDelete(tablerow , allStudents, studentId){
