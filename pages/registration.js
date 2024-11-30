@@ -26,19 +26,21 @@ function register() {
 
         //to create rows with data in tablebody , calling another function
         createTableRows(allStudents);
+
+        //after adding input fields should be cleared
+        document.getElementById("fullname").value = "";
+        document.getElementById("mothername").value = "";
+        document.getElementById("classno").value = "";
+        document.getElementById("contactno").value = "";
+        document.getElementById("rollno").value = "";
+        document.getElementById("studentid").value = "";
+        document.getElementById("address").value = "";
+        document.getElementById("email").value = "";
     }
 
 
 
-    //after adding input fields should be cleared
-    document.getElementById("fullname").value = "";
-    document.getElementById("mothername").value = "";
-    document.getElementById("classno").value = "";
-    document.getElementById("contactno").value = "";
-    document.getElementById("rollno").value = "";
-    document.getElementById("studentid").value = "";
-    document.getElementById("address").value = "";
-    document.getElementById("email").value = "";
+
 
 
 }
@@ -104,6 +106,7 @@ function createTableRows(allStudents) {
     //Reset Button added
     const resetbuttontd = document.createElement("td");
     const resetebutton = document.createElement("button");
+    resetebutton.className = "tablebtn"
     const resetanchor = document.createElement("a");
     resetanchor.textContent = "Reset";
     resetanchor.href = "#registrationform"
@@ -133,6 +136,7 @@ function createTableRows(allStudents) {
     const deletbuttontd = document.createElement("td");
     const deletebutton = document.createElement("button");
     deletebutton.textContent = "Delete";
+    deletebutton.className = "tablebtn"
     deletbuttontd.appendChild(deletebutton);
     tablerow.appendChild(deletbuttontd);
 
@@ -150,6 +154,7 @@ function createTableRows(allStudents) {
     //View Button Added for phone screen
     const viewDetails = document.createElement("td");
     const viewButton = document.createElement("button");
+    viewButton.className = "tablebtn"
     const viewButtonanchor = document.createElement("a");
     viewButtonanchor.textContent = "View";
     viewButtonanchor.href = "#viewDetailsExpand";
@@ -184,7 +189,7 @@ function createTableRows(allStudents) {
         <h4>Student Id - ${StudentId}</h4>
         <h4>Address - ${Address}</h4>
         <h4>Email ID - ${Email}</h4>
-        <button onClick="hide()">Hide</button>
+        <button onClick="hide()" class="tablebtn">Hide</button>
         `
     })
 
