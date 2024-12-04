@@ -26,9 +26,13 @@ function register() {
 
         //to create rows with data in tablebody , calling another function
         createTableRows(allStudents);
+
     }
 
-
+    //Changing button text after updating the student details
+    if (document.getElementById("btnanchor").textContent == "Update Student") {
+        document.getElementById("btnanchor").textContent = "Add Student"
+    }
 
     //after adding input fields should be cleared
     document.getElementById("fullname").value = "";
@@ -120,12 +124,16 @@ function createTableRows(allStudents) {
         document.getElementById("rollno").value = allStudents.rollNo;
         document.getElementById("studentid").value = allStudents.studentId;
         document.getElementById("address").value = allStudents.studentAddress;
+        document.getElementById("email").value = allStudents.studentemail;
 
         tablerow.remove();
         const DataStored = JSON.parse(localStorage.getItem("allStudents")) || [];
         const updateData = DataStored.filter(s => s.studentId !== allStudents.studentId);
         // updateLocal(updateData);
         localStorage.setItem("allStudents", JSON.stringify(updateData));
+
+        //Changing button text when updating the student details
+        document.getElementById("btnanchor").textContent = "Update Student"
     })
 
 

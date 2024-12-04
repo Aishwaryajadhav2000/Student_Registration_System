@@ -26,99 +26,104 @@
         <h1>Student Admission Registration</h1>
     </header>
 
-    <main>
-        <section class="formsection" id="registrationform">
-            <form action="">
-                <label for="name" id="" class="formfields">Name :</label>
-                <input type="text" id="fullname" name="name" placeholder="Enter  Full Name" class=" formfields">
+    <div class="video-background">
+        <video autoplay muted loop class="background-video">
+            <source src="../src/Body_Background.mov" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
 
-                <label for="mothername" id="" class="formfields">Mother Name :</label>
-                <input type="text" id="mothername" name="mothername" placeholder="Enter Mother Name"
-                    class=" formfields">
+        <main>
+            <section class="formsection" id="registrationform">
+                <form action="">
+                    <label for="name" id="" class="formfields">Name :</label>
+                    <input type="text" id="fullname" name="name" placeholder="Enter  Full Name" class=" formfields">
 
-                <section class="sectionform">
-                    <article>
-                        <label for="classname">Class :</label>
+                    <label for="mothername" id="" class="formfields">Mother Name :</label>
+                    <input type="text" id="mothername" name="mothername" placeholder="Enter Mother Name"
+                        class=" formfields">
 
-                        <select name="classname" id="classno">
-                            <option value="NA">Select Standard</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </article>
-                    <article>
-                        <label for="contact">Contact No :</label>
-                        <input type="number" name="contact" placeholder="Enter Contact No" id="contactno">
-                    </article>
-                </section>
+                    <section class="sectionform">
+                        <article>
+                            <label for="classname">Class :</label>
 
-                <section class="sectionform">
-                    <article>
-                        <label for="rollno">Roll No :</label>
-                        <input type="number" name="rollno" placeholder="Enter Roll No" id="rollno">
-                    </article>
-                    <article>
-                        <label for="studentid">Student Id :</label>
-                        <input type="number" name="studentid" placeholder="Enter Student ID" id="studentid">
-                    </article>
-                </section>
+                            <select name="classname" id="classno">
+                                <option value="NA">Select Standard</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </article>
+                        <article>
+                            <label for="contact">Contact No :</label>
+                            <input type="number" name="contact" placeholder="Enter Contact No" id="contactno">
+                        </article>
+                    </section>
 
-                <label for="email" class="formfields">Email :</label>
-                <input id="email" type="email" name="Email" placeholder="Enter Email Id" class="formfields">
+                    <section class="sectionform">
+                        <article>
+                            <label for="rollno">Roll No :</label>
+                            <input type="number" name="rollno" placeholder="Enter Roll No" id="rollno">
+                        </article>
+                        <article>
+                            <label for="studentid">Student Id :</label>
+                            <input type="number" name="studentid" placeholder="Enter Student ID" id="studentid">
+                        </article>
+                    </section>
 
-                <label for="address" id="addresslabel" class="formfields">Address :</label>
-                <textarea name="address" id="address" placeholder="Enter Student Address"
-                    class=" formfields"></textarea>
+                    <label for="email" class="formfields">Email :</label>
+                    <input id="email" type="email" name="Email" placeholder="Enter Email Id" class="formfields">
 
-                <button type="button" class="submit" id="addStudent" onclick="register()"><a
-                        href="#studentDataTable">Add
-                        Student</a></button>
+                    <label for="address" id="addresslabel" class="formfields">Address :</label>
+                    <textarea name="address" id="address" placeholder="Enter Student Address"
+                        class=" formfields"></textarea>
 
+                    <button type="button" class="submit" id="addStudent" onclick="register()"><a id="btnanchor"
+                            href="#studentDataTable">Add
+                            Student</a></button>
 
-            </form>
+                </form>
 
-        </section>
+            </section>
 
-        <section id="studentDataTable" style="height: auto;">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th class="disabledPhonScrn">Parents Name</th>
-                        <th>Class</th>
-                        <th class="disabledPhonScrn">Contact No</th>
-                        <th>Roll No</th>
-                        <th class="disabledPhonScrn">Student ID</th>
-                        <th class="disabledPhonScrn">Address</th>
-                        <th class="disabledPhonScrn">Email ID</th>
-                        <th>Edit Details</th>
-                        <th>Delete Record</th>
-                        <th class="disabledScrn">View Details</th>
-                    </tr>
-                </thead>
-                <tbody id="studentData">
-                    <!-- <tr>
+            <section id="studentDataTable" style="height: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th class="disabledPhonScrn">Parents Name</th>
+                            <th>Class</th>
+                            <th class="disabledPhonScrn">Contact No</th>
+                            <th>Roll No</th>
+                            <th class="disabledPhonScrn">Student ID</th>
+                            <th class="disabledPhonScrn">Address</th>
+                            <th class="disabledPhonScrn">Email ID</th>
+                            <th>Edit Details</th>
+                            <th>Delete Record</th>
+                            <th class="disabledScrn">View Details</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentData">
+                        <!-- <tr>
                         <th id="name"></th>
                     </tr> -->
-                </tbody>
+                    </tbody>
 
 
-            </table>
-        </section>
+                </table>
+            </section>
 
-        <section id="viewDetailsExpand" class="viewDetailsExpandclass">
-        </section>
-    </main>
+            <section id="viewDetailsExpand" class="viewDetailsExpandclass">
+            </section>
+        </main>
 
-
+    </div>
 
 </body>
 
