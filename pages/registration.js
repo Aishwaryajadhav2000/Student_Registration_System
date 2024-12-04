@@ -27,23 +27,23 @@ function register() {
         //to create rows with data in tablebody , calling another function
         createTableRows(allStudents);
 
+
+        //after adding input fields should be cleared
+        document.getElementById("fullname").value = "";
+        document.getElementById("mothername").value = "";
+        document.getElementById("classno").value = "";
+        document.getElementById("contactno").value = "";
+        document.getElementById("rollno").value = "";
+        document.getElementById("studentid").value = "";
+        document.getElementById("address").value = "";
+        document.getElementById("email").value = "";
+
+        //Changing button text after updating the student details
+        if (document.getElementById("btnanchor").textContent == "Update Student") {
+            document.getElementById("btnanchor").textContent = "Add Student"
+        }
+
     }
-
-    //Changing button text after updating the student details
-    if (document.getElementById("btnanchor").textContent == "Update Student") {
-        document.getElementById("btnanchor").textContent = "Add Student"
-    }
-
-    //after adding input fields should be cleared
-    document.getElementById("fullname").value = "";
-    document.getElementById("mothername").value = "";
-    document.getElementById("classno").value = "";
-    document.getElementById("contactno").value = "";
-    document.getElementById("rollno").value = "";
-    document.getElementById("studentid").value = "";
-    document.getElementById("address").value = "";
-    document.getElementById("email").value = "";
-
 
 }
 
@@ -132,7 +132,7 @@ function createTableRows(allStudents) {
         // updateLocal(updateData);
         localStorage.setItem("allStudents", JSON.stringify(updateData));
 
-        //Changing button text when updating the student details
+        //Changing button text after updating the student details
         document.getElementById("btnanchor").textContent = "Update Student"
     })
 
