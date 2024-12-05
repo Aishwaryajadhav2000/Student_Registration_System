@@ -108,6 +108,7 @@ function createTableRows(allStudents) {
     //Reset Button added
     const resetbuttontd = document.createElement("td");
     const resetebutton = document.createElement("button");
+    resetebutton.className = "resetbtn";
     const resetanchor = document.createElement("a");
     resetanchor.textContent = "Reset";
     resetanchor.href = "#registrationform"
@@ -140,6 +141,7 @@ function createTableRows(allStudents) {
     //Delete Button Added
     const deletbuttontd = document.createElement("td");
     const deletebutton = document.createElement("button");
+    deletebutton.className = "dltbtn";
     deletebutton.textContent = "Delete";
     deletbuttontd.appendChild(deletebutton);
     tablerow.appendChild(deletbuttontd);
@@ -158,6 +160,7 @@ function createTableRows(allStudents) {
     //View Button Added for phone screen
     const viewDetails = document.createElement("td");
     const viewButton = document.createElement("button");
+    viewButton.className ="viewbtn";
     const viewButtonanchor = document.createElement("a");
     viewButtonanchor.textContent = "View";
     viewButtonanchor.href = "#viewDetailsExpand";
@@ -192,7 +195,7 @@ function createTableRows(allStudents) {
         <h4>Student Id - ${StudentId}</h4>
         <h4>Address - ${Address}</h4>
         <h4>Email ID - ${Email}</h4>
-        <button onClick="hide()">Hide</button>
+        <button onClick="hide()" class="hidebtn">Hide Details</button>
         `
     })
 

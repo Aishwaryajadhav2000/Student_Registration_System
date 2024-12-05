@@ -1,31 +1,8 @@
 /* Header */
 /* Header */
 body {
-    /* color: white; */
-    /* background-color: #2b6a8b; */
-    /* background: url(../src/Body_Background.mov); */
     margin: 0;
     color: white;
-}
-
-.video-background {
-    position: relative;
-    width: 100%;
-    /* height: 100vh; */
-    height: auto;
-    /* overflow: hidden; */
-
-}
-
-.background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    /* Sends the video to the back */
 }
 
 header {
@@ -35,13 +12,14 @@ header {
     width: 100%;
     background-color: #5e5caf;
     height: 100px;
-    /* Match height to fit content */
     z-index: 1000;
     display: flex;
     flex-direction: column;
-    /* Stack nav and h1 vertically */
     align-items: center;
     justify-content: center;
+}
+.schlimg{
+    display: none;
 }
 
 header nav {
@@ -71,25 +49,27 @@ header h1 {
     background: linear-gradient(rgb(255, 255, 255), rgba(149, 5, 27, 0.8), rgba(0, 119, 255, 0.611));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    /* color: rgb(238, 0, 153, 0.8), rgba(0, 119, 255, 0.8); */
-    /* background: linear-gradient(135deg, rgba(238, 0, 153, 0.8), rgba(0, 119, 255, 0.8)); */
 
 }
 
 /* Main Section */
 main {
     padding-top: 100px;
-
-    /* Add space to avoid overlap with header */
+    background: linear-gradient(to left, rgba(238, 0, 153, 0.8), rgba(0, 119, 255, 0.8));
 }
 
+.artcl{
+    background: url(../src/AdobeStock_281428151_Preview.jpeg);
+    margin-left: 10px;
+    width: 100%;
+}
 
 /* Form section styling */
 .formsection {
     height: auto;
-    width: 80%;
+    width: 95%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     padding: 30px;
 }
 
@@ -100,9 +80,10 @@ form {
     background: linear-gradient(135deg, rgba(238, 0, 153, 0.8), rgba(0, 119, 255, 0.8));
 
 }
-table{
+
+table {
     background-color: rgba(0, 0, 0, 0.315);
-  
+
 }
 
 /* Form fields styling */
@@ -141,9 +122,10 @@ select {
     background: rgba(255, 255, 255, 0.1);
     color: rgb(255, 255, 255);
 }
-select{
-    color: blue;
-    option{
+
+select {
+
+    option {
         color: rgb(255, 0, 204);
         font-size: larger;
         font-weight: bold;
@@ -154,7 +136,8 @@ input::placeholder {
     color: rgba(255, 255, 255, 0.8);
     font-style: italic;
 }
-textarea::placeholder{
+
+textarea::placeholder {
     color: rgba(255, 255, 255, 0.8);
     font-style: italic;
 }
@@ -175,11 +158,13 @@ textarea::placeholder{
         color: white;
     }
 }
-.tablebtn{
+
+.tablebtn {
     background: linear-gradient(to right, rgb(14, 14, 123), rgb(218, 61, 87));
-color: white;
-    a{
-        color:white;
+    color: white;
+
+    a {
+        color: white;
     }
 }
 
@@ -208,10 +193,20 @@ color: white;
 }
 
 @media (min-width:1500px) {
-    .formsection {
-        /* background-color: red; */
-        width: 90%;
-
+   
+    .schlimg{
+        background: url(../src/schlimg.jpg);
+        width: 20%;
+        height: 100vh;
+        display: flex;
+        background-size: cover;
+    }
+    header{
+        height: 160px;
+        justify-content: space-between;
+    }
+    main{
+        margin-top: 50px;
     }
 
     .formfields {
@@ -243,19 +238,6 @@ color: white;
         margin: 0;
         justify-content: space-between;
     }
-
-    /* .middleinput{
-        justify-content: space-between;
-     
-        background-color: brown;
-        display: flex;
-        #classcontact{
-            width: 10vh;
-            display: flex;
-            margin: 0;
-            justify-content: space-between;
-        }
-    } */
 
     .sectionform {
         display: flex;
@@ -307,6 +289,13 @@ color: white;
     .video-background {
         background-color: #2b6a8b;
     }
+    .viewbtn{
+        background-color: blue;
+       a{
+        color: white;
+        text-decoration: none;
+       }
+    }
 }
 
 @media(min-width:500px) {
@@ -322,7 +311,28 @@ color: white;
     padding: 2px;
     width: 105%;
     padding-left: 5px;
-    button{
+
+    button {
         padding: 7px 9px 7px 9px;
     }
+}
+
+
+.resetbtn {
+    background-color: green;
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+}
+
+.dltbtn {
+    background-color: red;
+    color: white;
+}
+.hidebtn{
+    background-color: #0f0bef;
+    color: white;
+   
 }

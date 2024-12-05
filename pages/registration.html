@@ -12,6 +12,9 @@
 <body>
 
     <header>
+        <div class="schlimg">
+            <h1>hi</h1>
+        </div>
         <nav>
             <a href="#registrationform">Register</a>
             <a href="#studentDataTable">View All Students</a>
@@ -26,14 +29,13 @@
         <h1>Student Admission Registration</h1>
     </header>
 
-    <div class="video-background">
-        <video autoplay muted loop class="background-video">
-            <source src="../src/Body_Background.mov" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
 
-        <main>
-            <section class="formsection" id="registrationform">
+
+    <main>
+
+        <section class="formsection" id="registrationform">
+
+            <article>
                 <form action="">
                     <label for="name" id="" class="formfields">Name :</label>
                     <input type="text" id="fullname" name="name" placeholder="Enter  Full Name" class=" formfields">
@@ -89,41 +91,45 @@
                             Student</a></button>
 
                 </form>
+            </article>
 
-            </section>
+            <article class="artcl">
+               
+            </article>
+        </section>
 
-            <section id="studentDataTable" style="height: auto;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th class="disabledPhonScrn">Parents Name</th>
-                            <th>Class</th>
-                            <th class="disabledPhonScrn">Contact No</th>
-                            <th>Roll No</th>
-                            <th class="disabledPhonScrn">Student ID</th>
-                            <th class="disabledPhonScrn">Address</th>
-                            <th class="disabledPhonScrn">Email ID</th>
-                            <th>Edit Details</th>
-                            <th>Delete Record</th>
-                            <th class="disabledScrn">View Details</th>
-                        </tr>
-                    </thead>
-                    <tbody id="studentData">
-                        <!-- <tr>
+        <section id="studentDataTable" style="height: auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th class="disabledPhonScrn">Parents Name</th>
+                        <th>Class</th>
+                        <th class="disabledPhonScrn">Contact No</th>
+                        <th>Roll No</th>
+                        <th class="disabledPhonScrn">Student ID</th>
+                        <th class="disabledPhonScrn">Address</th>
+                        <th class="disabledPhonScrn">Email ID</th>
+                        <th>Edit Details</th>
+                        <th>Delete Record</th>
+                        <th class="disabledScrn">View Details</th>
+                    </tr>
+                </thead>
+                <tbody id="studentData">
+                    <!-- <tr>
                         <th id="name"></th>
                     </tr> -->
-                    </tbody>
+                </tbody>
 
 
-                </table>
-            </section>
+            </table>
+        </section>
 
-            <section id="viewDetailsExpand" class="viewDetailsExpandclass">
-            </section>
-        </main>
+        <section id="viewDetailsExpand" class="viewDetailsExpandclass">
+        </section>
+    </main>
 
-    </div>
+
 
 </body>
 
