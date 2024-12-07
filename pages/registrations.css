@@ -1,9 +1,9 @@
-/* Header */
+
 body {
     margin: 0;
     color: white;
 }
-
+/* Header */
 header {
     position: fixed;
     top: 0;
@@ -26,7 +26,7 @@ header {
         color: rgb(29, 10, 233);
         text-decoration: none;
         margin: 0 15px;
-        font-size: large;
+        font-size: larger;
         font-weight: bold;
     }
 
@@ -44,7 +44,7 @@ nav a:hover {
 
 header h1 {
     margin: 0;
-    padding: 10px;
+    /* padding: 10px; */
     font-size: 24px;
     text-align: center;
     background: linear-gradient(rgb(255, 255, 255), rgba(149, 5, 27, 0.8), rgba(0, 119, 255, 0.611));
@@ -76,11 +76,6 @@ form {
     padding: 35px;
     /* background: linear-gradient(to right, rgb(218, 61, 87),  rgb(14, 14, 123)); */
     background: linear-gradient(135deg, rgba(238, 0, 153, 0.8), rgba(0, 119, 255, 0.8));
-
-}
-
-table {
-    background-color: rgba(0, 0, 0, 0.315);
 
 }
 
@@ -317,7 +312,7 @@ textarea::placeholder {
         padding: 0;
     }
     header{
-        background-color: #e262ff;
+        background-color: #7389f6;
         .navigation a{
             color: white;
         }
@@ -353,7 +348,7 @@ textarea::placeholder {
     }
 }
 
-.dltbtn {
+.dltbtn , #deleted{
     background-color: red;
     color: white;
 }
@@ -362,4 +357,34 @@ textarea::placeholder {
     background-color: #0f0bef;
     color: white;
 
+}
+
+#deltestudent{
+    display: none;
+    position: fixed;
+    top: 70%; left: 50%; transform: translate(-50%, -10%);
+    z-index: 1000;
+    background: white;
+    padding: 10px;
+    h2{
+        color: brown;
+    }
+    div{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+#cancel {
+    background-color: blue;
+        color: white;
+}
+
+#noData{
+    color: brown;
+    display: flex;
+    font-size:xx-large;
+    display: none;
+    font-weight: bolder;
+    text-align: center;
 }

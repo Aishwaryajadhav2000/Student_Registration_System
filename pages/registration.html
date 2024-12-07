@@ -2,23 +2,32 @@
 <html lang="en">
 
 <head>
+    <!--      Meta tags     -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Registration System Single Web page application">
+    <meta name="keywords" content="Form , StudentsDetails">
+    <meta name="author" content="Aishwarya Jadhav">
+
+    <!-- Title Here-->
     <title>Registration</title>
     <link rel="stylesheet" href="registrations.css">
+
+    <!-- JavaScript Page -->
     <script src="registration.js" defer></script>
 </head>
 
 <body>
 
     <header>
-        <div class="schlimg">
-            <!-- <img src="../src/schlimg.jpg" alt=""> -->
-        </div>
+        <!--  image Taken from online sources -->
+        <div class="schlimg"></div>
         <div class="navigation">
+            <!-- Navigation  -->
             <nav>
                 <a href="#registrationform">Register</a>
                 <a href="#studentDataTable">View All Students</a>
+                <!-- GitHub Link -->
                 <a href="https://github.com/Aishwaryajadhav2000/Student_Registration_System" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-github" viewBox="0 0 16 16">
@@ -27,7 +36,7 @@
                     </svg>
                 </a>
             </nav>
-            <h1>Student Admission Registration</h1>
+            <h1>Streamlined Admissions for Schools</h1>
 
         </div>
 
@@ -37,12 +46,14 @@
 
 
     <main>
+        <!-- (image Taken from online sources) -->
         <div class="phnscreenschlimg">
             <img src="../src/schlimg.jpg" alt="">
         </div>
         <section class="formsection" id="registrationform">
 
             <article>
+                <!-- Form  -->
                 <form action="">
                     <label for="name" id="" class="formfields">Name :</label>
                     <input type="text" id="fullname" name="name" placeholder="Enter  Full Name" class=" formfields">
@@ -96,18 +107,17 @@
 
                     <button type="button" class="submit" id="addStudent" onclick="register()">
                         <a id="btnanchor" href="#studentDataTable">
-                            AddStudent
+                            Add Student
                         </a>
                     </button>
 
                 </form>
             </article>
 
-            <article class="artcl">
-
-            </article>
+            <article class="artcl"></article>
         </section>
 
+        <!-- Students Details Displaying In Table  -->
         <section id="studentDataTable" style="height: auto;">
             <table>
                 <thead>
@@ -125,18 +135,19 @@
                         <th class="disabledScrn">View Details</th>
                     </tr>
                 </thead>
-                <tbody id="studentData">
-                    <!-- <tr>
-                        <th id="name"></th>
-                    </tr> -->
-                </tbody>
-
-
+                <tbody id="studentData"></tbody>
             </table>
+            <p id="noData">No Student Data..</p>
+
+            <!-- Buttons will appear when user wants to delete details -->
+            <article id="deltestudent"></article>
+
         </section>
 
+        <!-- View Students Details only for phone screens -->
         <section id="viewDetailsExpand" class="viewDetailsExpandclass">
         </section>
+     
     </main>
 
 

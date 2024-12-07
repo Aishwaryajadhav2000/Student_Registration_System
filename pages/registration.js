@@ -12,19 +12,25 @@ function register() {
     const studentId = document.getElementById("studentid").value;
     const studentAddress = document.getElementById("address").value;
     const studentemail = document.getElementById("email").value;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     //stored it in array
     const allStudents = {
         studentName, studentParentname, classno, contactNo, rollNo, studentId, studentAddress, studentemail
     }
 
+    // Condition so user can't add the empty row
     if (!studentName || !studentParentname || !classno || !contactNo || !rollNo || !studentId || !studentAddress || !studentemail) {
         alert("All Details are mandetory ! Please Fill All the Details..");
+    } else if (contactNo.length !== 10) {
+        alert("Please enter valid contact no")
+    } else if (!emailRegex.test(studentemail)) {
+        alert("Please enter valid email id")
     } else {
         //To store the data in localstorage calling another function
         allStudentsinLocal(allStudents);
 
-        //to create rows with data in tablebody , calling another function
+        // Calling another function to create rows with data in tablebody
         createTableRows(allStudents);
 
 
@@ -43,6 +49,10 @@ function register() {
             document.getElementById("btnanchor").textContent = "Add Student"
         }
 
+        //Removing no data para after entering details
+        document.getElementById("noData").style.display = "none"
+
+
     }
 
 }
@@ -56,7 +66,7 @@ function allStudentsinLocal(allStudents) {
     //push data in DataStore
     DataStore.push(allStudents);
 
-    //push data from DataStore to localstorage
+    //set data from DataStore to localstorage
     localStorage.setItem("allStudents", JSON.stringify(DataStore));
     console.log("Datastore", DataStore);
 
@@ -83,27 +93,9 @@ function createTableRows(allStudents) {
     <td class="disabledPhonScrn">${allStudents.studentId}</td>
     <td class="disabledPhonScrn">${allStudents.studentAddress}</td>
     <td class="disabledPhonScrn">${allStudents.studentemail}</td>
- 
-
     `
+
     tablebody.appendChild(tablerow);
-
-    //create row tr first
-    // const tablerow = document.createElement("tr");
-    // for (let key in allStudents) {
-    //     const studentstexttd = document.createElement("td");
-    //     studentstexttd.textContent = allStudents[key];
-    //     tablerow.appendChild(studentstexttd);
-    // }
-
-
-    //create td table data
-    // const tabledataname = document.createElement("td");
-    // //give value
-    // tabledataname.textContent = allStudents.studentName;
-    // //add td in tr
-    // tablerow.appendChild(tabledataname);
-
 
     //Reset Button added
     const resetbuttontd = document.createElement("td");
@@ -116,7 +108,7 @@ function createTableRows(allStudents) {
     resetbuttontd.appendChild(resetebutton);
     tablerow.appendChild(resetbuttontd);
 
-    //Reset button functionality
+    //Reset button functionality - user can edit the details
     resetebutton.addEventListener("click", function () {
         document.getElementById("fullname").value = allStudents.studentName;
         document.getElementById("mothername").value = allStudents.studentParentname;
@@ -147,20 +139,36 @@ function createTableRows(allStudents) {
     tablerow.appendChild(deletbuttontd);
 
 
-    //Delete button functionality
+    //Delete button functionality - user can Delete the details
     deletebutton.addEventListener("click", function () {
-        tablerow.remove();
-        // LocalDataDelete(tablerow);
-        console.log("LocaldataDelete function call")
-        const DataStored = JSON.parse(localStorage.getItem("allStudents")) || [];
-        const updateData = DataStored.filter(s => s.studentId !== allStudents.studentId);
-        localStorage.setItem("allStudents", JSON.stringify(updateData));
+
+        const deleteStudent = document.getElementById("deltestudent");
+        deleteStudent.style.display = "block"
+        deleteStudent.innerHTML = `
+        <h2>Delete Student Data Permanently ?</h2>
+        <br>
+        <div>
+        <button id="cancel" onClick="cancelbtn()">Cancel</button>
+        <button id="deleted">Delete</button>
+        </div>`
+        const deletebtn = document.getElementById("deleted");
+
+        deletebtn.addEventListener("click", function () {
+            console.log("deleted");
+            tablerow.remove();
+            console.log("LocaldataDelete function call")
+            const DataStored = JSON.parse(localStorage.getItem("allStudents")) || [];
+            const updateData = DataStored.filter(s => s.studentId !== allStudents.studentId);
+            localStorage.setItem("allStudents", JSON.stringify(updateData));
+            cancelbtn();
+        })
+
     })
 
     //View Button Added for phone screen
     const viewDetails = document.createElement("td");
     const viewButton = document.createElement("button");
-    viewButton.className ="viewbtn";
+    viewButton.className = "viewbtn";
     const viewButtonanchor = document.createElement("a");
     viewButtonanchor.textContent = "View";
     viewButtonanchor.href = "#viewDetailsExpand";
@@ -209,26 +217,25 @@ function loadstudents() {
     console.log("loadstudents function call");
     const storeData = JSON.parse(localStorage.getItem("allStudents")) || [];
     storeData.forEach(allStudents => createTableRows(allStudents));
-    console.log("rows", createTableRows);
+    console.log("rows", storeData);
+
+    if (storeData.length == 0) {
+        console.log("length is zero");
+        document.getElementById("noData").style.display = "block"
+    } else {
+        console.log("length is not zero");
+        document.getElementById("noData").style.display = "none"
+
+    }
 }
 
 //if window refreshing then loadstudents function should call
 window.onload = loadstudents;
+
 function hide() {
     location.reload();
 }
 
-//function for reset and delete to remove data from localstorage
-// function LocalDataDelete(tablerow , allStudents, studentId){
-//     console.log("LocaldataDelete function call")
-//     tablerow.remove();
-//     const DataStored = JSON.parse(localStorage.getItem("allStudents")) || [];
-//     const updateData = DataStored.filter(s => s.studentId !== allStudents.studentId);
-//     // updateLocal(updateData);
-//     localStorage.setItem("allStudents" , json.stringify(updateData));
-// }
-
-// function updateLocal(updateData){
-//             localStorage.setItem("allStudents", json.stringify(updateData));
-
-// }
+function cancelbtn() {
+    location.reload();
+}
