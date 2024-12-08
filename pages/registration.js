@@ -182,7 +182,6 @@ function createTableRows(allStudents) {
         viewDetailSection.style.display = "block"
 
         console.log("view click", tablerow);
-        console.log("view click", tablerow);
 
         const name = tablerow.cells[0].innerHTML;
         console.log("name", name);
@@ -219,6 +218,7 @@ function loadstudents() {
     storeData.forEach(allStudents => createTableRows(allStudents));
     console.log("rows", storeData);
 
+    // If no data then showing heading below the table
     if (storeData.length == 0) {
         console.log("length is zero");
         document.getElementById("noData").style.display = "block"
